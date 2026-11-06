@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Learning HTML</title>
+  <style>
+  body {
+/*margin: 0;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto; */ 
+      background: rgb(35, 33, 33);
+      color: white;
+      text-align: left;
+      font-family: Arial;
+      padding: 30px;
+    }
+    button {
+  position: absolute;
+  left: 50px;
+  top: 460px;
+}
+ h3{
+  position: absolute;
+  left: 50px;
+  top: 470px;
+ }
+ input[type="color"] {
+  /* position: absolute; */
+  border-color: rgb(35, 33, 33);
+  background-color: black;
+  width: 100px;
+  height: 100px;
+ }
+h1[id="texthex"] {
+position: absolute;
+  left: 50px;
+  top: 490px;
+  color: black;
+
+}
+input[id="rangeid"] {
+position: absolute;
+  left: 50px;
+   top: 600px;
+
+}
+h1[id="rangepi"] {
+position: absolute;
+  left: 50px;
+   top: 620px;  
+   color: cyan;
+}
+h2[id="pass"] {
+  position: absolute;
+  left: 350px;
+  top: 10px;
+  color: magenta;
+}
+h1[id="checkprint"] {
+  position: absolute;
+  left: 350px;
+  top: 50px;
+}
+      </style>
+    
+</head>
+<body>
+  <iframe src="ad.html" width="200" height="100">
+    </iframe>
+<input type="color" id="colorid">
+<input type="range" min="0" max="100" value="0" id="rangeid">
+<input type="password" id="passid" placeholder="Password">
+<input type="checkbox" id="checkboxid">
+<h1 id="texthex">hexvalue</h1> 
+<h1>Superscript(sup)and subscript(sub) test</h1>
+<h1>H<sup>2</sup>O</h1>
+<h1>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></h1>
+   <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&list=RDdQw4w9WgXcQ&start_radio=1" target=_self title"Download">
+   <h2>Download</h2>
+</a>
+<audio controls src="song.mp3.mp3">   
+   </audio>
+<button
+  onmousedown="ON()"
+  onmouseup="off()"
+  onmouseleave="off()"
+  ontouchstart="ON()"
+  ontouchend="off()">
+  
+  momentary button</button>
+<h3 id="state">off</h3>
+<h1 id="rangepi">0</h1>
+<h2 id="pass">reveal password</h2>
+<h1 id="checkprint">Checkbox is unchecked</h1>
+<!--<button onclick="ON()">button</button>!-->
+<script>
+  let colorInput = document.getElementById("colorid");
+  let textHex = document.getElementById("texthex");
+  colorInput.addEventListener("input", function() {
+    textHex.textContent = colorInput.value;
+    textHex.style.color = colorInput.value;
+    console.log(colorInput.value);
+  });
+  function ON(){
+    document.getElementById("state").innerHTML = "on"; 
+  }
+  function off(){
+    document.getElementById("state").innerHTML = "off"; 
+
+  }
+  let rangeInput = document.getElementById("rangeid");
+  rangeInput.addEventListener("input", function() {
+    document.getElementById("rangepi").innerHTML = rangeInput.value;
+    console.log(rangeInput.value); 
+  });
+   let passInput = document.getElementById("passid");
+    let passDisplay = document.getElementById("pass");
+    passInput.addEventListener("input", function() {
+      passDisplay.textContent = passInput.value;
+      console.log(passInput.value);
+    });
+   let checkboxInput = document.getElementById("checkboxid");
+    let checkPrint = document.getElementById("checkprint");
+    checkboxInput.addEventListener("input", function() {
+      checkPrint.textContent = checkboxInput.checked ? "Checkbox is checked" : "Checkbox is unchecked";
+      console.log(checkboxInput.checked);
+    });
+</script>
+</body>
+</html>
